@@ -1,0 +1,31 @@
+# Build artefacts - never commit these.
+#
+# The shipped executables live in binaries/ and ARE tracked; this rule is for
+# anything a build drops in the repository root.
+*.exe
+!binaries/*.exe
+*.o
+*.obj
+
+# Generated from samodiva.nnue by make_nnue_header.py - 2 MB of C array that
+# would duplicate the 394 KB net already in the repository.  build.bat creates
+# it automatically when it is missing, so the produced exe is still
+# self-contained (network embedded, no external file needed).
+nnue_data.hpp
+
+# Syzygy tablebases: huge, and not yours to redistribute.
+*.rtbw
+*.rtbz
+
+# Test and match output
+*.pgn
+*.log
+*.out
+*.epd
+__pycache__/
+*.pyc
+
+# Local scratch
+dbg.err
+sess.txt
+*.bak
